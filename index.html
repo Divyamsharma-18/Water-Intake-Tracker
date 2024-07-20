@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Intake Tracker</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/aa4c08b0fe.js" crossorigin="anonymous"></script>
+    <style>
+        .hidden {
+            display: none;
+        }
+        .centered {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1000;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border: 2px solid rgb(219, 218, 218);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .jar {
+            position: relative;
+            background: transparent;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .water {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: #1e24e5;
+            height: 0;
+            transition: height 0.5s ease;
+        }
+        .Quantity {
+            position: absolute;
+            text-align: center;
+            width: 100%;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #64748b;
+        }
+    </style>
+</head>
+<body class="flex justify-center items-center min-h-screen">
+
+    <div class="container md:mt-2 sm:mt-2 border-2 mt-8 rounded-3xl shadow-md w-96 flex flex-col justify-center items-center">
+
+        <h1 class="text-blue-800 text-3xl mt-12 font-semibold">Water Intake Tracker</h1>
+
+        <div class="mt-4 text-slate-500 text-md">Add your water intake goal! <br>
+            <input class="border-2 text-center w-36 mt-3 ml-6 rounded-md" type="number"> ml
+        </div>
+
+        <div class="jar flex justify-center items-center mt-6 h-52 w-36 border-t-white border-2 rounded-b-3xl border-l-slate-400 border-r-slate-400 border-b-slate-400 ">
+            <div class="water"></div>
+            <div class="Quantity z-10 text-slate-500 text-center font-semibold">
+                0ml/Goal
+            </div>
+        </div>
+
+        <div class="addAmount mt-4">
+            <h2 class="text-center text-blue-800 font-semibold text-2xl">Add to jar</h2>
+
+            <div class="flex mt-12 mb-4 miniJar cursor-pointer gap-6">
+                <div class="text-center flex flex-col gap-5">
+                    <i class="fa-solid fa-mug-hot fa-2xl" style="color: #1e24e5;"></i>100ml
+                </div>
+                <div class="text-center flex flex-col gap-5">
+                    <i class="fa-solid fa-glass-water fa-2xl" style="color: #1e24e5;"></i>250ml
+                </div>
+                <div class="text-center flex flex-col gap-5">
+                    <i class="fa-solid fa-bottle-water fa-2xl" style="color: #1e24e5;"></i>500ml
+                </div>
+                <div class="text-center flex flex-col gap-5">
+                    <i class="fa-solid fa-jar fa-2xl" style="color: #1e24e5;"></i>1000ml
+                </div>
+            </div>
+        </div>
+    
+
+        <div class="victory centered hidden">
+            <h1 class="m-8 text-slate-900 font-semibold text-center text-2xl">
+                <p class="text-3xl">⭐</p>
+                Congratulations! <br>
+                You did it! <br>
+                <p class="text-3xl">🎉</p>
+            </h1>
+        </div>
+
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
